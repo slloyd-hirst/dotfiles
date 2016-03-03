@@ -1,16 +1,14 @@
 eval "$(rbenv init -)"
 
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH # get mysql client/gem to work - http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib
+#export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH # get mysql client/gem to work - http://stackoverflow.com/questions/10557507/rails-mysql-on-osx-library-not-loaded-libmysqlclient-18-dylib
 
-#export http_proxy="http://lon1.sme.zscaler.net:80"
-#export https_proxy="http://lon1.sme.zscaler.net:9480"
 export no_proxy=127.0.0.1
 export DEFERRED_GARBAGE_COLLECTION=true
 export EDITOR=vim
-export gem_server='http://sage:soppass@gems.platform.sageone.com/'
 
-if [ -f ~/.git-completion.sh ]; then
-  source ~/.git-completion.sh
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+  # brew install git bash-completion
+  source /usr/local/git/contrib/completion/git-completion.bash
 fi
 
 if [ -f ~/.git-prompt.sh ]; then
@@ -23,14 +21,10 @@ set_term_title(){
   echo -en "\033]0;$1\a"
 }
 
-# RBENV
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export RBENV_ROOT=/usr/local/opt/rbenv
-
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
+#export RUBY_HEAP_SLOTS_INCREMENT=1000000
+#export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+#export RUBY_GC_MALLOC_LIMIT=1000000000
+#export RUBY_HEAP_FREE_MIN=500000
 
 export MYSQL_USERNAME='fuji'
 export MYSQL_PASSWORD='yama'
