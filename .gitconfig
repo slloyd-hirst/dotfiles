@@ -1,0 +1,8 @@
+[user]
+  name = Stephen Lloyd-Hirst
+  email = stephen.lloyd-hirst@sage.com
+[alias]
+  st = status
+  br = branch
+  co = checkout
+  p = pull
