@@ -43,25 +43,3 @@ function commit() {
   git commit $@;
   parrot --loops=2;
 }
-
-function new_mtd_user() {
-  curl -X POST \
-    https://test-api.service.hmrc.gov.uk/create-test-user/organisations \
-    -H 'Accept: application/vnd.hmrc.1.0+json' \
-    -H 'Authorization: Bearer 1d634b850233cf92f657e2249905c' \
-    -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/json' \
-    -H 'Postman-Token: 600bb611-b77e-4cfc-b407-bd0d2abbbbfc' \
-    -d '{ "serviceNames": [ "submit-vat-returns", "mtd-vat"]}'
-}
-
-function new_mtd_not_authed_user() {
-  curl -X POST \
-    https://test-api.service.hmrc.gov.uk/create-test-user/organisations \
-    -H 'Accept: application/vnd.hmrc.1.0+json' \
-    -H 'Authorization: Bearer 1d634b850233cf92f657e2249905c' \
-    -H 'Cache-Control: no-cache' \
-    -H 'Content-Type: application/json' \
-    -H 'Postman-Token: 600bb611-b77e-4cfc-b407-bd0d2abbbbfc' \
-    -d '{ "serviceNames": [ "submit-vat-returns" ]}'
-}
